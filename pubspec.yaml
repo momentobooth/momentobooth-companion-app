@@ -13,15 +13,11 @@ dependencies:
     sdk: flutter
   
   # UI
-  cupertino_icons: ^1.0.2
 
   # Network
-  mqtt5_client: 4.0.1
+  mqtt5_client: 4.0.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
   flutter_lints: ^2.0.0
 
 flutter:
