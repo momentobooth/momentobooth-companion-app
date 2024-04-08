@@ -1,0 +1,14 @@
+{
+    "@@locale": "en",
+
+    "genericBackButton": "Back",
+    "genericPrintButton": "Print",
+    "genericContinueButton": "Continue",
+    "genericRefreshButton": "Refresh",
+    "genericClearButton": "Clear",
+    "genericSaveButton": "Save",
+    "genericCloseButton": "Close",
+    "genericRetryButton": "Retry",
+    "genericCancelButton": "Cancel",
+    "genericOneMomentPlease": "One moment please..."
+}

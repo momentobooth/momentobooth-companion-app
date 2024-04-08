@@ -1,0 +1,14 @@
+{
+    "@@locale": "nl",
+
+    "genericBackButton": "Terug",
+    "genericPrintButton": "Afdrukken",
+    "genericContinueButton": "Doorgaan",
+    "genericRefreshButton": "Vernieuwen",
+    "genericClearButton": "Wissen",
+    "genericSaveButton": "Opslaan",
+    "genericCloseButton": "Sluiten",
+    "genericRetryButton": "Probeer opnieuw",
+    "genericCancelButton": "Annuleren",
+    "genericOneMomentPlease": "Een moment geduld..."
+}
