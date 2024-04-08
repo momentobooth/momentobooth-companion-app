@@ -93,7 +93,7 @@ BEGIN
             VALUE "FileDescription", "momentoboothcompanionapp" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "momentoboothcompanionapp" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.h3xsoftware. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.h3xsoftware. All rights reserved." "\0"
             VALUE "OriginalFilename", "momentoboothcompanionapp.exe" "\0"
             VALUE "ProductName", "momentoboothcompanionapp" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
