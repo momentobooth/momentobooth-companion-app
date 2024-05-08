@@ -7,10 +7,10 @@ edition = "2021"
 crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
-flutter_rust_bridge = { version = "=2.0.0-dev.30", features = ["chrono"] }
+flutter_rust_bridge = { version = "=2.0.0-dev.33", features = ["chrono"] }
 url = "2.5.0"
 ipp = "5.0.3"
-chrono = "0.4.37"
+chrono = "0.4.38"
 
 [profile.dev]
 opt-level = 3

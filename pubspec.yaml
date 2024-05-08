@@ -9,14 +9,17 @@ environment:
   sdk: '>=3.3.1 <4.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
+  flutter: { sdk: flutter }
 
   # Communication
-  mqtt5_client: 4.2.2
+  mqtt5_client: 4.2.4
+
+  # Models
+  freezed_annotation: 2.4.1
+  json_annotation: 4.9.0
 
   # Rust bridge
-  flutter_rust_bridge: 2.0.0-dev.30
+  flutter_rust_bridge: 2.0.0-dev.33
   rust_lib_momentoboothcompanionapp:
     path: rust_builder
 
@@ -25,11 +28,16 @@ dependencies:
   widgetbook_annotation: 3.1.0
 
 dev_dependencies:
-  build_runner: ^2.4.9
+  # Code quality
   flutter_lints: ^3.0.2
-  integration_test:
-    sdk: flutter
+  integration_test: { sdk: flutter }
 
+  # Models
+  freezed: 2.5.2
+  json_serializable: 6.8.0
+  build_runner: ^2.4.9
+
+  # UI tools
   widgetbook_generator: 3.7.0
 
 flutter:
@@ -42,7 +50,7 @@ scripts:
     all: rps install flutter && rps install cargo-expand && rps install flutter_rust_bridge_codegen && rps install deps
     flutter: fvm install
     cargo-expand: cargo install cargo-expand
-    flutter_rust_bridge_codegen: cargo install flutter_rust_bridge_codegen --version 2.0.0-dev.30
+    flutter_rust_bridge_codegen: cargo install flutter_rust_bridge_codegen --version 2.0.0-dev.33
     deps: fvm flutter pub get
   clean:
     rust_bridge: git clean -xfd lib/src
@@ -58,5 +66,3 @@ scripts:
     build:
       $before: $docs install-deps
       $script: mdbook build documentation
-
-
