@@ -37,8 +37,8 @@ class MqttCupsPrintQueueStatus with _$MqttCupsPrintQueueStatus {
 
 enum MqttCupsPrinterState {
 
-  @JsonValue(3) idle,
-  @JsonValue(4) processing,
-  @JsonValue(5) stopped,
+  @JsonValue("Idle") idle,
+  @JsonValue("Processing") processing,
+  @JsonValue("Stopped") stopped,
 
 }
