@@ -19,7 +19,7 @@ abstract class SettingsManagerBase with Store, Logger {
   // ////// //
 
   @action
-  Future<void> update(Settings settings) async {
+  void update(Settings settings) {
     if (settings == _settings) return;
     _settings = settings;
   }

@@ -1,3 +1,4 @@
 Animation - 1712763413483.json: https://lottiefiles.com/animations/alert-ZX7Oo4AjiA
 Animation - 1709936404300.json: https://lottiefiles.com/animations/printererror-5F1emL7QSV
-Animation - 1712764053420.json: https://lottiefiles.com/animations/content-printing-u6OuruA8UE
+Animation - 1715327537292.json: https://lottiefiles.com/animations/loading-16-camera-UAOWTNMUmy
+Animation - 1715329058493.json: https://lottiefiles.com/animations/sleeping-head-L617p2W31T

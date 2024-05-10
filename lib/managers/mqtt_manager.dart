@@ -30,7 +30,7 @@ abstract class MqttManagerBase with Store, Logger {
   ConnectionState _connectionState = ConnectionState.disconnected;
 
   @readonly
-  IList<MqttCupsPrintQueueStatus> _printerStatuses = const IListConst<MqttCupsPrintQueueStatus>([]);
+  IList<MqttCupsPrintQueueStatus>? _printerStatuses;
 
   // //////////////////////////////////// //
   // Initialization and client management //
@@ -51,6 +51,7 @@ abstract class MqttManagerBase with Store, Logger {
 
     _client?.disconnect();
     _client = null;
+    _printerStatuses = null;
 
     _connectionState = ConnectionState.connecting;
     MqttServerClient client = MqttServerClient.withPort(
@@ -109,6 +110,8 @@ abstract class MqttManagerBase with Store, Logger {
           case MqttPublishMessage(:final variableHeader, :final payload) when variableHeader!.topicName.startsWith("${settings.cups2MqttRootTopic}/"):
             // Message from CUPS2MQTT
             if (payload.length == 0) return;
+
+            _printerStatuses ??= const IList<MqttCupsPrintQueueStatus>.empty();
             _onCups2MqttMessage(
               variableHeader.topicName.substring("${settings.cups2MqttRootTopic}/".length),
               const Utf8Decoder().convert(payload.message!),
@@ -139,7 +142,7 @@ abstract class MqttManagerBase with Store, Logger {
         final printerStatus = MqttCupsPrintQueueStatus.fromJson(json);
         logInfo("CUPS2MQTT printer info: $printerStatus");
 
-        _printerStatuses = _printerStatuses.updateById([printerStatus], (existing) => existing.name == printerStatus.name);
+        _printerStatuses = _printerStatuses!.updateById([printerStatus], (existing) => existing.name == printerStatus.name);
     }
   }
 
