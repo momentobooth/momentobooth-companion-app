@@ -13,6 +13,7 @@ class Settings with _$Settings {
   const Settings._();
 
   const factory Settings({
+    @Default(true) bool showOsTitleBar,
     @JsonKey(defaultValue: MqttSettings.withDefaults) required MqttSettings mqtt,
   }) = _Settings;
 
@@ -21,7 +22,10 @@ class Settings with _$Settings {
   factory Settings.fromJson(Map<String, Object?> json) => _$SettingsFromJson(json);
 
   Settings withEnv() {
+    String? showOsTitleBarEnvVar = Platform.environment["MBCA_SHOW_OS_TITLEBAR"];
+
     return copyWith(
+      showOsTitleBar: showOsTitleBarEnvVar != null ? showOsTitleBarEnvVar == "true" : showOsTitleBar,
       mqtt: mqtt.withEnv(),
     );
   }

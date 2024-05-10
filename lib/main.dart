@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get_it/get_it.dart';
@@ -9,6 +11,7 @@ import 'package:momentoboothcompanionapp/models/settings.dart';
 import 'package:momentoboothcompanionapp/src/rust/frb_generated.dart';
 import 'package:momentoboothcompanionapp/views/printer_status/printer_status.dart';
 import 'package:talker/talker.dart';
+import 'package:window_manager/window_manager.dart';
 
 part 'main.routes.dart';
 
@@ -24,6 +27,15 @@ Future<void> main() async {
 
   getIt<Talker>().info("Starting Momento Booth Companion App");
   getIt<Talker>().debug("Settings: ${getIt<SettingsManager>().settings}");
+
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    await windowManager.ensureInitialized();
+    WindowOptions windowOptions = WindowOptions(
+      titleBarStyle: getIt<SettingsManager>().settings.showOsTitleBar ? TitleBarStyle.normal : TitleBarStyle.hidden,
+    );
+    await windowManager.waitUntilReadyToShow(windowOptions);
+  }
 
   await RustLib.init();
   runApp(const MyApp());

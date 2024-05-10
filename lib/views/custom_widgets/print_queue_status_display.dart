@@ -41,11 +41,11 @@ class PrintQueueStatusDisplay extends StatelessWidget {
                     flex: 1,
                     child: _getAnimation(context),
                   ),
-                  if (jobMessage != null && jobMessage!.isNotEmpty)
+                  if (_text.isNotEmpty)
                     Expanded(
                       flex: 2,
                       child: Text(
-                        jobMessage!,
+                        _text,
                         style: context.theme.typography.display!.copyWith(fontSize: 32.0),
                       ),
                     ),
@@ -60,6 +60,15 @@ class PrintQueueStatusDisplay extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String get _text {
+    return switch (statusState) {
+      PrintQueueViewState.noMqttConnection => "No connection to MQTT server",
+      PrintQueueViewState.noCups2MqttTopicFound => "No CUPS2MQTT topic found",
+      PrintQueueViewState.noPrinterFound => "No print queues found in MQTT state",
+      _ => jobMessage ?? '',
+    };
   }
 
   Widget _getAnimation(BuildContext context) {

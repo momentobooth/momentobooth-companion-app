@@ -32,6 +32,7 @@ dependencies:
   go_router: 14.1.0
   fluent_ui: 4.8.7
   lottie: 3.1.0
+  window_manager: 0.3.8
 
   # l10n
   flutter_localizations: { sdk: flutter }
