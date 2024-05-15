@@ -1,1 +1,1 @@
-export 'package:flutter_gen/gen_l10n/app_localizations.dart' show AppLocalizations;
+export 'package:momentoboothcompanionapp/l10n/generated/app_localizations.dart' show AppLocalizations;
