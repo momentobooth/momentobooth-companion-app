@@ -308,10 +308,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_rust_bridge
-      sha256: "43c2c170e7120df691fb31c1c06c498784ee7cae9b495257c72c934cf4dadf3e"
+      sha256: efb018e387c5e844095e35e9d6c6bd1610c49f25de109f4988b7c45aeca60a9a
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0-dev.34"
+    version: "2.0.0-dev.36"
   flutter_test:
     dependency: transitive
     description: flutter
@@ -371,10 +371,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: aa073287b8f43553678e6fa9e8bb9c83212ff76e09542129a8099bbc8db4df65
+      sha256: "6ad5662b014c06c20fa46ab78715c96b2222a7fe4f87bf77e0289592c2539e86"
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.2"
+    version: "14.1.3"
   graphs:
     dependency: transitive
     description:
@@ -796,18 +796,18 @@ packages:
     dependency: "direct main"
     description:
       name: talker
-      sha256: edd1ec2d1e941ac1569f27d820cd896e0dc9bc4e4160963e3c8c192079f08da0
+      sha256: f876081a34027464e3f1ac785c7e470a5fca2515f4c8c277fb6f78a63e5cda1e
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.0"
+    version: "4.2.3"
   talker_logger:
     dependency: transitive
     description:
       name: talker_logger
-      sha256: "777c62bb8019ec26f5b99626fe0bd28e169bae724ffde8438a5e4ad28e2c20df"
+      sha256: "8728b67e97a2cd484ed217ec9dca1e05063aa6c9464a1c095e77540f944b1c8a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.0"
+    version: "4.2.3"
   term_glyph:
     dependency: transitive
     description:
