@@ -37,10 +37,10 @@ packages:
     dependency: transitive
     description:
       name: archive
-      sha256: ecf4273855368121b1caed0d10d4513c7241dfc813f7d3c8933b36622ae9b265
+      sha256: "6bd38d335f0954f5fad9c79e614604fbf03a0e5b975923dd001b6ea965ef5b4b"
       url: "https://pub.dev"
     source: hosted
-    version: "3.5.1"
+    version: "3.6.0"
   args:
     dependency: transitive
     description:
@@ -221,10 +221,10 @@ packages:
     dependency: transitive
     description:
       name: device_frame
-      sha256: afe76182aec178d171953d9b4a50a43c57c7cf3c77d8b09a48bf30c8fa04dd9d
+      sha256: d031a06f5d6f4750009672db98a5aa1536aa4a231713852469ce394779a23d75
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   event_bus:
     dependency: transitive
     description:
@@ -245,10 +245,10 @@ packages:
     dependency: "direct main"
     description:
       name: fast_immutable_collections
-      sha256: "533806a7f0c624c2e479d05d3fdce4c87109a7cd0db39b8cc3830d3a2e8dedc7"
+      sha256: c3c73f4f989d3302066e4ec94e6ec73b5dc872592d02194f49f1352d64126b8c
       url: "https://pub.dev"
     source: hosted
-    version: "10.2.3"
+    version: "10.2.4"
   file:
     dependency: transitive
     description:
@@ -308,10 +308,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_rust_bridge
-      sha256: "43c2c170e7120df691fb31c1c06c498784ee7cae9b495257c72c934cf4dadf3e"
+      sha256: efb018e387c5e844095e35e9d6c6bd1610c49f25de109f4988b7c45aeca60a9a
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0-dev.34"
+    version: "2.0.0-dev.36"
   flutter_test:
     dependency: transitive
     description: flutter
@@ -371,10 +371,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: aa073287b8f43553678e6fa9e8bb9c83212ff76e09542129a8099bbc8db4df65
+      sha256: abec47eb8c8c36ebf41d0a4c64dbbe7f956e39a012b3aafc530e951bdc12fe3f
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.2"
+    version: "14.1.4"
   graphs:
     dependency: transitive
     description:
@@ -656,10 +656,10 @@ packages:
     dependency: transitive
     description:
       name: pubspec_parse
-      sha256: c63b2876e58e194e4b0828fcb080ad0e06d051cb607a6be51a9e084f47cb9367
+      sha256: c799b721d79eb6ee6fa56f00c04b472dcd44a30d258fac2174a6ec57302678f8
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.3"
+    version: "1.3.0"
   recase:
     dependency: transitive
     description:
@@ -796,18 +796,18 @@ packages:
     dependency: "direct main"
     description:
       name: talker
-      sha256: edd1ec2d1e941ac1569f27d820cd896e0dc9bc4e4160963e3c8c192079f08da0
+      sha256: f876081a34027464e3f1ac785c7e470a5fca2515f4c8c277fb6f78a63e5cda1e
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.0"
+    version: "4.2.3"
   talker_logger:
     dependency: transitive
     description:
       name: talker_logger
-      sha256: "777c62bb8019ec26f5b99626fe0bd28e169bae724ffde8438a5e4ad28e2c20df"
+      sha256: "8728b67e97a2cd484ed217ec9dca1e05063aa6c9464a1c095e77540f944b1c8a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.0"
+    version: "4.2.3"
   term_glyph:
     dependency: transitive
     description:
@@ -892,10 +892,10 @@ packages:
     dependency: transitive
     description:
       name: web_socket
-      sha256: "217f49b5213796cb508d6a942a5dc604ce1cb6a0a6b3d8cb3f0c314f0ecea712"
+      sha256: "24301d8c293ce6fe327ffe6f59d8fd8834735f0ec36e4fd383ec7ff8a64aa078"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   web_socket_channel:
     dependency: transitive
     description:
