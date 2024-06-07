@@ -51,7 +51,7 @@ dev_dependencies:
   # Models
   freezed: 2.5.2
   json_serializable: 6.8.0
-  build_runner: ^2.4.10
+  build_runner: ^2.4.11
 
   # UI
   widgetbook_generator: 3.7.0

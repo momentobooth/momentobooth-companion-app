@@ -42,15 +42,15 @@ watch-code:
 ##
 
 [windows]
-build-release:
+build:
   fvm flutter build windows --release
 
 [linux]
-build-release:
+build:
   fvm flutter build linux --release
 
 [macos]
-build-release:
+build:
   fvm flutter build macos --release
 
 test:
