@@ -20,7 +20,7 @@ dependencies:
   fast_immutable_collections: 10.2.4
 
   # Rust bridge
-  flutter_rust_bridge: 2.0.0-dev.37
+  flutter_rust_bridge: 2.0.0-dev.38
   rust_lib_momentoboothcompanionapp: { path: rust_builder }
 
   # UI
@@ -40,7 +40,7 @@ dependencies:
   # Misc
   get_it: 7.7.0
   synchronized: 3.1.0+1
-  talker: 4.2.3
+  talker: 4.2.4
   meta: any
 
 dev_dependencies:
