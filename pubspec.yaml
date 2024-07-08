@@ -12,15 +12,15 @@ dependencies:
   flutter: { sdk: flutter }
 
   # Communication
-  mqtt5_client: 4.2.5
+  mqtt5_client: 4.3.0
 
   # Models
-  freezed_annotation: 2.4.1
+  freezed_annotation: 2.4.2
   json_annotation: 4.9.0
   fast_immutable_collections: 10.2.4
 
   # Rust bridge
-  flutter_rust_bridge: 2.0.0
+  flutter_rust_bridge: 2.1.0
   rust_lib_momentoboothcompanionapp: { path: rust_builder }
 
   # UI
