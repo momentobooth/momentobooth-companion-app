@@ -308,10 +308,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_rust_bridge
-      sha256: f703c4b50e253e53efc604d50281bbaefe82d615856f8ae1e7625518ae252e98
+      sha256: fac14d2dd67eeba29a20e5d99fac0d4d9fcd552cdf6bf4f8945f7679c6b07b1d
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.0"
   flutter_test:
     dependency: transitive
     description: flutter
@@ -334,10 +334,10 @@ packages:
     dependency: "direct main"
     description:
       name: freezed_annotation
-      sha256: c3fd9336eb55a38cc1bbd79ab17573113a8deccd0ecbbf926cca3c62803b5c2d
+      sha256: f9f6597ac43cc262fa7d7f2e65259a6060c23a560525d1f2631be374540f2a9b
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.3"
   frontend_server_client:
     dependency: transitive
     description:
@@ -371,10 +371,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: cdae1b9c8bd7efadcef6112e81c903662ef2ce105cbd220a04bbb7c3425b5554
+      sha256: "39dd52168d6c59984454183148dc3a5776960c61083adfc708cc79a7b3ce1ba8"
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.0"
+    version: "14.2.1"
   graphs:
     dependency: transitive
     description:
@@ -576,10 +576,10 @@ packages:
     dependency: "direct main"
     description:
       name: mqtt5_client
-      sha256: "9259f7493dbb7f230673761be653a8b12f9476e4a791944cc7983a5c11767b30"
+      sha256: "3edc594d2d813bd364650983f4110b1d200ecfdc2c5968a4e6ee2bd2ebc66ee5"
       url: "https://pub.dev"
     source: hosted
-    version: "4.2.5"
+    version: "4.3.0"
   nested:
     dependency: transitive
     description:
@@ -916,10 +916,10 @@ packages:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: "872e7e9065ef6e85a1e93b3b41830f90af575c5a898b6c573acdc972fad0fb29"
+      sha256: de5b9887f9ad663bdcc1f957bc22aa0eb4dd7b406ac0142158bf35c0fad4a4f2
       url: "https://pub.dev"
     source: hosted
-    version: "3.8.0"
+    version: "3.8.1"
   widgetbook_annotation:
     dependency: "direct main"
     description:
