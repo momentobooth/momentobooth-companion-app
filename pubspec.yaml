@@ -15,7 +15,7 @@ dependencies:
   mqtt5_client: 4.3.0
 
   # Models
-  freezed_annotation: 2.4.3
+  freezed_annotation: 2.4.4
   json_annotation: 4.9.0
   fast_immutable_collections: 10.2.4
 
@@ -40,7 +40,7 @@ dependencies:
   # Misc
   get_it: 7.7.0
   synchronized: 3.1.0+1
-  talker: 4.3.2
+  talker: 4.3.4
   meta: any
 
 dev_dependencies:
