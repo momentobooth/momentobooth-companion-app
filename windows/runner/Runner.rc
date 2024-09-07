@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.h3xsoftware" "\0"
-            VALUE "FileDescription", "momentoboothcompanionapp" "\0"
+            VALUE "CompanyName", "MomentoBooth" "\0"
+            VALUE "FileDescription", "The MomentoBooth photobooth companion application." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "momentoboothcompanionapp" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.h3xsoftware. All rights reserved." "\0"
-            VALUE "OriginalFilename", "momentoboothcompanionapp.exe" "\0"
-            VALUE "ProductName", "momentoboothcompanionapp" "\0"
+            VALUE "InternalName", "companion" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 MomentoBooth team. All rights reserved." "\0"
+            VALUE "OriginalFilename", "companionapp.exe" "\0"
+            VALUE "ProductName", "Companion" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

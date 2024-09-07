@@ -63,5 +63,11 @@ dist/
 AppDir/
 .flatpak-builder/
 
+# Fastlane
+.bundle
+vendor/
+.env
+fastlane/report.xml
+
 # FVM Version Cache
 .fvm/
