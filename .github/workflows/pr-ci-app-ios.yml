@@ -1,0 +1,125 @@
+name: PR CI App - iOS
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths-ignore: [ README.md ]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    permissions:
+      contents: write
+      pull-requests: write
+
+    if: ${{ startsWith(github.event.pull_request.head.ref, 'release/') != true && github.event.pull_request.draft != true }}
+
+    runs-on: macos-latest
+    timeout-minutes: 30
+
+    env:
+      SCCACHE_GHA_ENABLED: "true"
+      RUSTC_WRAPPER: "sccache"
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+
+    - name: Install build dependencies
+      run: brew install ruby
+
+    - uses: webfactory/ssh-agent@v0.9.0
+      with:
+        ssh-private-key: ${{ secrets.MATCH_CERTIFICATES_GIT_ACCESS_TOKEN }}
+
+    - name: Install keys, certificates and profiles
+      env:
+        MATCH_CERTIFICATES_GIT_URL: ${{ secrets.MATCH_CERTIFICATES_GIT_URL }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+        APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        APP_STORE_CONNECT_KEY: ${{ secrets.APP_STORE_CONNECT_KEY }}
+      run: |
+        PATH=/opt/homebrew/opt/ruby/bin:$HOME/.gem:$PATH
+        gem install bundler --user-install
+        bundle install
+        bundle exec fastlane ci_install_ios_appstore_cert_using_api
+
+    - name: Detect Flutter version
+      uses: kuhnroyal/flutter-fvm-config-action@v2
+
+    - name: Setup Flutter
+      uses: hrishikesh-kadam/setup-flutter@v1
+      with:
+        ref: ${{ env.FLUTTER_VERSION }}
+        setFlutterRootPath: 'true'
+        addPubCacheBinToPath: 'true'
+        flutterPrecache: '--ios'
+
+    - name: Disable Flutter analytics and CLI animations
+      run: flutter config --no-analytics --no-cli-animations
+
+    - name: Install minimal Rust
+      uses: dtolnay/rust-toolchain@master
+      with:
+        toolchain: stable
+        target: aarch64-apple-ios
+
+    # Yes, I have tried adding cache like for macOS in MomentoBooth photobooth repo, however
+    # I can't find where the `flutter builds` creates the Rust target folder...
+
+    - name: Setup sccache-cache
+      uses: mozilla-actions/sccache-action@v0.0.5
+
+    - name: Install cargo-expand
+      uses: baptiste0928/cargo-install@v3
+      with:
+        crate: cargo-expand
+
+    - name: Install flutter_rust_bridge_codegen
+      uses: baptiste0928/cargo-install@v3
+      with:
+        crate: flutter_rust_bridge_codegen
+        version: "2.3.0"
+
+    - name: Install dependencies
+      run: flutter pub get --enforce-lockfile
+
+    - name: Generation l10n
+      run: flutter gen-l10n
+
+    - name: Generate Dart-to-Rust bridging code
+      run: flutter_rust_bridge_codegen generate
+
+    - name: Code generation
+      run: dart run build_runner build --delete-conflicting-outputs
+
+    - name: Flutter analyze
+      run: flutter analyze
+
+    - name: Build project
+      run: |
+        rm ios/Podfile.lock
+        flutter build ipa -v --export-options-plist=ios/exportOptions.plist --dart-define SENTRY_DSN=${{ secrets.SENTRY_DSN }} --dart-define SENTRY_ENVIRONMENT=Production --dart-define SENTRY_RELEASE=${{ steps.extract_release_version.outputs.distributor_version }} --dart-define FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}
+
+    - name: Commit changes to iOS build files and create PR
+      id: cpr
+      uses: peter-evans/create-pull-request@v6
+      with:
+        add-paths: ios
+        commit-message: Update iOS build files
+        title: Update iOS build files
+        body: This PR is created by the iOS CI pipeline, to help keeping the iOS build working.
+        branch: chore/update-ios-build-files
+
+    - name: Add comment to remind of created PR
+      if: ${{ steps.cpr.outputs.pull-request-number }}
+      uses: thollander/actions-comment-pull-request@v2
+      with:
+        message: I created PR \#${{ steps.cpr.outputs.pull-request-number }} for you to update the iOS build.
