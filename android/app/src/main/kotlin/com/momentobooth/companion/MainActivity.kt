@@ -1,4 +1,4 @@
-package com.h3xsoftware.momentoboothcompanionapp
+package com.momentobooth.companion
 
 import io.flutter.embedding.android.FlutterActivity
 

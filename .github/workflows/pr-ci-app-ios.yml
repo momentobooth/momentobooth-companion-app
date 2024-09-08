@@ -19,7 +19,7 @@ jobs:
     if: ${{ startsWith(github.event.pull_request.head.ref, 'release/') != true && github.event.pull_request.draft != true }}
 
     runs-on: macos-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     env:
       SCCACHE_GHA_ENABLED: "true"
@@ -72,7 +72,7 @@ jobs:
         target: aarch64-apple-ios
 
     # Yes, I have tried adding cache like for macOS in MomentoBooth photobooth repo, however
-    # I can't find where the `flutter builds` creates the Rust target folder...
+    # I can't find where the Rust target folder is created during `flutter build`...
 
     - name: Setup sccache-cache
       uses: mozilla-actions/sccache-action@v0.0.5
@@ -106,7 +106,7 @@ jobs:
     - name: Build project
       run: |
         rm ios/Podfile.lock
-        flutter build ipa -v --export-options-plist=ios/exportOptions.plist --dart-define SENTRY_DSN=${{ secrets.SENTRY_DSN }} --dart-define SENTRY_ENVIRONMENT=Production --dart-define SENTRY_RELEASE=${{ steps.extract_release_version.outputs.distributor_version }} --dart-define FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}
+        flutter build ipa -v --no-pub --export-options-plist=ios/exportOptions.plist --dart-define SENTRY_DSN=${{ secrets.SENTRY_DSN }} --dart-define SENTRY_ENVIRONMENT=Production --dart-define SENTRY_RELEASE=${{ steps.extract_release_version.outputs.distributor_version }} --dart-define FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}
 
     - name: Commit changes to iOS build files and create PR
       id: cpr
