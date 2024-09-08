@@ -1,4 +1,4 @@
-name: Release - iOS
+name: Release - Android
 
 on:
   pull_request:
@@ -11,11 +11,11 @@ permissions:
 
 jobs:
   build:
-    name: Check code and build app
+    name: Check code and build app bundle
 
     if: ${{ github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/') }}
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 20
 
     env:
@@ -26,22 +26,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Install build dependencies
-      run: brew install ruby
-
-    - name: Install keys, certificates and profiles
-      env:
-        MATCH_CERTIFICATES_GIT_URL: ${{ secrets.MATCH_CERTIFICATES_GIT_URL }}
-        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-        APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
-        APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-        APP_STORE_CONNECT_KEY: ${{ secrets.APP_STORE_CONNECT_KEY }}
-      run: |
-        PATH=/opt/homebrew/opt/ruby/bin:$HOME/.gem:$PATH
-        gem install bundler --user-install
-        bundle install
-        bundle exec fastlane ci_install_ios_appstore_cert_using_api
-
     - name: Detect Flutter version
       uses: kuhnroyal/flutter-fvm-config-action@v2
 
@@ -51,7 +35,7 @@ jobs:
         ref: ${{ env.FLUTTER_VERSION }}
         setFlutterRootPath: 'true'
         addPubCacheBinToPath: 'true'
-        flutterPrecache: '--ios'
+        flutterPrecache: '--android'
 
     - name: Disable Flutter analytics and CLI animations
       run: flutter config --no-analytics --no-cli-animations
@@ -60,7 +44,7 @@ jobs:
       uses: dtolnay/rust-toolchain@master
       with:
         toolchain: stable
-        target: aarch64-apple-ios
+        targets: x86_64-linux-android,aarch64-linux-android,armv7-linux-androideabi
 
     # Yes, I have tried adding cache like for macOS in MomentoBooth photobooth repo, however
     # I can't find where the Rust target folder is created during `flutter build`...
@@ -94,23 +78,29 @@ jobs:
     - name: Flutter analyze
       run: flutter analyze
 
-    - name: Build project
+    - name: Build app bundle
+      env:
+        ANDROID_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE }}
+        KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.ANDROID_KEYSTORE_KEY_ALIAS }}
+        KEY_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_KEY_PASSWORD }}
+        STORE_FILE: /tmp/keystore.jks
       run: |
-        rm ios/Podfile.lock
-        flutter build ipa -v --no-pub --export-options-plist=ios/exportOptions.plist --dart-define SENTRY_DSN=${{ secrets.SENTRY_DSN }} --dart-define SENTRY_ENVIRONMENT=Production --dart-define SENTRY_RELEASE=${{ steps.extract_release_version.outputs.distributor_version }} --dart-define FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}
+        echo $ANDROID_KEYSTORE | base64 --decode > $STORE_FILE
+        flutter build appbundle -v --no-pub --dart-define SENTRY_DSN=${{ secrets.SENTRY_DSN }} --dart-define SENTRY_ENVIRONMENT=Production --dart-define SENTRY_RELEASE=${{ steps.extract_release_version.outputs.distributor_version }} --dart-define FLUTTER_VERSION=${{ env.FLUTTER_VERSION }}
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ipa
-        path: build/ios/ipa/MB Companion.ipa
+        name: app-bundle
+        path: build/app/outputs/bundle/release/app-release.aab
 
   upload:
-    name: Upload to App Store Connect
+    name: Upload to Play Store
 
     needs: build
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
@@ -120,20 +110,19 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v4
       with:
-        name: ipa
+        name: app-bundle
 
-    - name: Install keys, certificates and profiles
+    - name: Install fastlane
       run: |
-        GEM_HOME=$HOME/.gem
-        PATH=/opt/homebrew/opt/ruby/bin:$GEM_HOME:$PATH
+        GEM_INSTALL_PATH=$HOME/.local/share/gem/ruby/3.0.0/bin
+        PATH=$GEM_INSTALL_PATH:$PATH
         gem install bundler --user-install
+        bundle config set --local path '$HOME/.gem'
         bundle install
-        echo $GEM_HOME >> $GITHUB_PATH
+        echo $GEM_INSTALL_PATH >> $GITHUB_PATH
 
-    - name: Upload to App Store Connect
+    - name: Upload to Play Store
       env:
-        APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
-        APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-        APP_STORE_CONNECT_KEY: ${{ secrets.APP_STORE_CONNECT_KEY }}
+        GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
       run: |
-        bundle exec fastlane ci_upload_to_testflight ipa_path:"MB Companion.ipa"
+        bundle exec fastlane ci_upload_to_play_store aab_path:app-release.aab
