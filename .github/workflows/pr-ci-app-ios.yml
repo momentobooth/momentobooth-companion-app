@@ -110,7 +110,7 @@ jobs:
 
     - name: Commit changes to iOS build files and create PR
       id: cpr
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         add-paths: ios
         commit-message: Update iOS build files
