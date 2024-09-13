@@ -12,7 +12,7 @@ url = "2.5.2"
 ipp = "5.0.4"
 chrono = "0.4.38"
 
-[target.'cfg(android)'.dependencies]
+[target.'cfg(target_os = "android")'.dependencies]
 openssl = { version = "*", features = ["vendored"] }
 
 [profile.dev]
