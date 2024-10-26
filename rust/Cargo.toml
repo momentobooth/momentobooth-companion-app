@@ -7,9 +7,9 @@ edition = "2021"
 crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
-flutter_rust_bridge = { version = "=2.5.0", features = ["chrono"] }
+flutter_rust_bridge = { version = "=2.5.1", features = ["chrono"] }
 url = "2.5.2"
-ipp = "5.0.4"
+ipp = "5.0.5"
 chrono = "0.4.38"
 
 [target.'cfg(target_os = "android")'.dependencies]
