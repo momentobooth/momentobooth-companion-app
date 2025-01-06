@@ -250,10 +250,10 @@ packages:
     dependency: "direct main"
     description:
       name: fast_immutable_collections
-      sha256: e5e27788db94c5f1046585566a5cf63a8139a0d743cf9fdcab7ae7b0c3701a4a
+      sha256: b044617c31fa3c80742308c032e39729ead75d808f7b53bc8129de59299f9875
       url: "https://pub.dev"
     source: hosted
-    version: "11.0.0"
+    version: "11.0.2"
   file:
     dependency: transitive
     description:
@@ -841,18 +841,18 @@ packages:
     dependency: "direct main"
     description:
       name: talker
-      sha256: "1d9e1b10704296ea3247c88f1d155fdc6482707811f344ce26b839ad5fe3999f"
+      sha256: dff22de27ac0dbe1bb2052fc258ccceee0a2703e6cfe03839ccd337aaf5d291b
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.3"
+    version: "4.6.0"
   talker_logger:
     dependency: transitive
     description:
       name: talker_logger
-      sha256: ac4e090e9af4ff23a1e82cfcc0647c5c3f56bada480f2154414903be5c1ebcf9
+      sha256: f6af15f038576fb727668131c2a829f986bab0bad379e48805a8f251e3687002
       url: "https://pub.dev"
     source: hosted
-    version: "4.5.3"
+    version: "4.6.0"
   term_glyph:
     dependency: transitive
     description:
