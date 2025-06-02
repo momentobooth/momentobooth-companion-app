@@ -58,10 +58,10 @@ packages:
     dependency: transitive
     description:
       name: async
-      sha256: d2872f9c19731c2e5f10444b14686eb7cc85c76274bd6c16e1816bff9a3bab63
+      sha256: "758e6d74e971c3e5aceb4110bfd6698efc7f501675bcfe0c775459a8140750eb"
       url: "https://pub.dev"
     source: hosted
-    version: "2.12.0"
+    version: "2.13.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -242,10 +242,10 @@ packages:
     dependency: transitive
     description:
       name: fake_async
-      sha256: "6a95e56b2449df2273fd8c45a662d6947ce1ebb7aafe80e550a3f68297f3cacc"
+      sha256: "5368f224a74523e8d2e7399ea1638b37aecfca824a3cc4dfdf77bf1fa905ac44"
       url: "https://pub.dev"
     source: hosted
-    version: "1.3.2"
+    version: "1.3.3"
   fast_immutable_collections:
     dependency: "direct main"
     description:
@@ -282,10 +282,10 @@ packages:
     dependency: "direct main"
     description:
       name: fluent_ui
-      sha256: "569f61002931665b9613ed12008a368d60ae66baab78b6270c4dc8b44f24d1df"
+      sha256: "8645eabacb46bfc9632fadc6e106756cdc6f2a4efb5a4fed4410bd3131306fe8"
       url: "https://pub.dev"
     source: hosted
-    version: "4.11.3"
+    version: "4.12.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -300,10 +300,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: "5398f14efa795ffb7a33e9b6a08798b26a180edac4ad7db3f231e40f82ce11e1"
+      sha256: "3105dc8492f6183fb076ccf1f351ac3d60564bff92e20bfc4af9cc1651f4e7e1"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "6.0.0"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -321,10 +321,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_rust_bridge
-      sha256: "5a5c7a5deeef2cc2ffe6076a33b0429f4a20ceac22a397297aed2b1eb067e611"
+      sha256: b416ff56002789e636244fb4cc449f587656eff995e5a7169457eb0593fcaddb
       url: "https://pub.dev"
     source: hosted
-    version: "2.9.0"
+    version: "2.10.0"
   flutter_test:
     dependency: transitive
     description: flutter
@@ -339,10 +339,10 @@ packages:
     dependency: "direct dev"
     description:
       name: freezed
-      sha256: "44c19278dd9d89292cf46e97dc0c1e52ce03275f40a97c5a348e802a924bf40e"
+      sha256: "62b248b2dfb06ded10c84b713215b25aea020a5b08c32e801a974361557ebc3f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.7"
+    version: "3.0.0-0.0.dev"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -384,10 +384,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "2b9ba6d4c247457c35a6622f1dee6aab6694a4e15237ff7c32320345044112b6"
+      sha256: "0b1e06223bee260dee31a171fb1153e306907563a0b0225e8c1733211911429a"
       url: "https://pub.dev"
     source: hosted
-    version: "15.1.1"
+    version: "15.1.2"
   graphs:
     dependency: transitive
     description:
@@ -445,10 +445,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl
-      sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
+      sha256: "3df61194eb431efc39c4ceba583b95633a403f46c9fd341e550ce0bfa50e9aa5"
       url: "https://pub.dev"
     source: hosted
-    version: "0.19.0"
+    version: "0.20.2"
   io:
     dependency: transitive
     description:
@@ -477,18 +477,18 @@ packages:
     dependency: "direct dev"
     description:
       name: json_serializable
-      sha256: c2fcb3920cf2b6ae6845954186420fca40bc0a8abcc84903b7801f17d7050d7c
+      sha256: c50ef5fc083d5b5e12eef489503ba3bf5ccc899e487d691584699b4bdefeea8c
       url: "https://pub.dev"
     source: hosted
-    version: "6.9.0"
+    version: "6.9.5"
   leak_tracker:
     dependency: transitive
     description:
       name: leak_tracker
-      sha256: c35baad643ba394b40aac41080300150a4f08fd0fd6a10378f8f7c6bc161acec
+      sha256: "6bb818ecbdffe216e81182c2f0714a2e62b593f4a4f13098713ff1685dfb6ab0"
       url: "https://pub.dev"
     source: hosted
-    version: "10.0.8"
+    version: "10.0.9"
   leak_tracker_flutter_testing:
     dependency: transitive
     description:
@@ -509,10 +509,10 @@ packages:
     dependency: transitive
     description:
       name: lints
-      sha256: c35bb79562d980e9a453fc715854e1ed39e24e7d0297a880ef54e17f9874a9d7
+      sha256: a5e2b223cb7c9c8efdc663ef484fdd95bb243bff242ef5b13e26883547fce9a0
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.1"
+    version: "6.0.0"
   logging:
     dependency: transitive
     description:
@@ -589,18 +589,18 @@ packages:
     dependency: "direct dev"
     description:
       name: mobx_codegen
-      sha256: "990da80722f7d7c0017dec92040b31545d625b15d40204c36a1e63d167c73cdc"
+      sha256: e0abbbc651a69550440f6b65c99ec222a1e2a4afd7baec8ba0f3088c7ca582a8
       url: "https://pub.dev"
     source: hosted
-    version: "2.7.0"
+    version: "2.7.1"
   mqtt5_client:
     dependency: "direct main"
     description:
       name: mqtt5_client
-      sha256: "11ef1bd8c75fd02152ace063e882797f6dacb820538842018e7845b23480a09c"
+      sha256: dd93dd6a75982b3347fd9679c764a5f46d4ff71aec46cb139a9ffcae13a7d4c3
       url: "https://pub.dev"
     source: hosted
-    version: "4.12.0"
+    version: "4.12.2"
   nested:
     dependency: transitive
     description:
@@ -793,10 +793,10 @@ packages:
     dependency: transitive
     description:
       name: source_gen
-      sha256: "14658ba5f669685cd3d63701d01b31ea748310f7ab854e471962670abcf57832"
+      sha256: "35c8150ece9e8c8d263337a265153c3329667640850b9304861faea59fc98f6b"
       url: "https://pub.dev"
     source: hosted
-    version: "1.5.0"
+    version: "2.0.0"
   source_helper:
     dependency: transitive
     description:
@@ -865,18 +865,18 @@ packages:
     dependency: "direct main"
     description:
       name: talker
-      sha256: "8784bb7ed8438832dcdc8211bd9b6fed96dcdf215145ff8771d5612667bc158a"
+      sha256: a664f5eae5284e94aa8c535e0400ab71a78fa2480ad18a7344dec928b5c56805
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.5"
+    version: "4.8.0"
   talker_logger:
     dependency: transitive
     description:
       name: talker_logger
-      sha256: "4f97def0c14944ea26caba225831dcdf4088017c02961c493c45a057e5e6c382"
+      sha256: b5d0bd04229eeccdf765cabf73e964ee28528c749104b56867c8d2eb764a45ee
       url: "https://pub.dev"
     source: hosted
-    version: "4.7.5"
+    version: "4.8.0"
   term_glyph:
     dependency: transitive
     description:
@@ -1001,10 +1001,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: "0968250880a6c5fe7edc067ed0a13d4bae1577fe2771dcf3010d52c4a9d3ca14"
+      sha256: ddfa8d30d89985b96407efce8acbdd124701f96741f2d981ca860662f1c0dc02
       url: "https://pub.dev"
     source: hosted
-    version: "14.3.1"
+    version: "15.0.0"
   watcher:
     dependency: transitive
     description:
@@ -1041,42 +1041,42 @@ packages:
     dependency: transitive
     description:
       name: webdriver
-      sha256: "3d773670966f02a646319410766d3b5e1037efb7f07cc68f844d5e06cd4d61c8"
+      sha256: "2f3a14ca026957870cfd9c635b83507e0e51d8091568e90129fbf805aba7cade"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.4"
+    version: "3.1.0"
   widgetbook:
     dependency: "direct main"
     description:
       name: widgetbook
-      sha256: "8e3cd3157c0c24e28278d62835383fab65098433dcde946fe958361094aa1401"
+      sha256: "116efd339f9d060ac4a063f3c1c91266757198bcfb43083fb3f1b7bcbb9e6f75"
       url: "https://pub.dev"
     source: hosted
-    version: "3.13.1"
+    version: "3.14.2"
   widgetbook_annotation:
     dependency: "direct main"
     description:
       name: widgetbook_annotation
-      sha256: "03274209fe93f32a2e548663a6fc671341804271980e2c65550e7f989c356fdf"
+      sha256: "41662c48c2a0e82cac676a83727203d863621a5f6fb2505395287b8789afdf38"
       url: "https://pub.dev"
     source: hosted
-    version: "3.4.0"
+    version: "3.5.0"
   widgetbook_generator:
     dependency: "direct dev"
     description:
       name: widgetbook_generator
-      sha256: ee9c0304a9c682ad1fe669881e117e0c263b452e3da3a95ac11c26a8cf7abab5
+      sha256: "38320c313a425e5a354bfdf6d2922efd69b5c3e9c0bf414d3ba7f947c303448a"
       url: "https://pub.dev"
     source: hosted
-    version: "3.12.0"
+    version: "3.13.0"
   window_manager:
     dependency: "direct main"
     description:
       name: window_manager
-      sha256: "732896e1416297c63c9e3fb95aea72d0355f61390263982a47fd519169dc5059"
+      sha256: "51d50168ab267d344b975b15390426b1243600d436770d3f13de67e55b05ec16"
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.3"
+    version: "0.5.0"
   yaml:
     dependency: transitive
     description:
