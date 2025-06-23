@@ -12,7 +12,7 @@ dependencies:
   flutter: { sdk: flutter }
 
   # Communication
-  mqtt5_client: 4.12.0
+  mqtt5_client: 4.13.2
 
   # Models
   freezed_annotation: 2.4.4
@@ -20,18 +20,18 @@ dependencies:
   fast_immutable_collections: 11.0.4
 
   # Rust bridge
-  flutter_rust_bridge: 2.9.0
+  flutter_rust_bridge: 2.10.0
   rust_lib_momentoboothcompanionapp: { path: rust_builder }
 
   # UI
-  widgetbook: 3.13.1
-  widgetbook_annotation: 3.4.0
+  widgetbook: 3.14.3
+  widgetbook_annotation: 3.5.0
   mobx: 2.5.0
   flutter_mobx: 2.3.0
-  go_router: 15.1.1
-  fluent_ui: 4.11.3
+  go_router: 15.2.3
+  fluent_ui: 4.12.0
   lottie: 3.3.1
-  window_manager: 0.4.3
+  window_manager: 0.5.0
 
   # l10n
   flutter_localizations: { sdk: flutter }
@@ -40,22 +40,22 @@ dependencies:
   # Misc
   get_it: 8.0.3
   synchronized: 3.3.1
-  talker: 4.7.5
+  talker: 4.9.1
   meta: any
 
 dev_dependencies:
   # Code quality
-  flutter_lints: 5.0.0
+  flutter_lints: 6.0.0
   integration_test: { sdk: flutter }
 
   # Models
-  freezed: 2.5.7
-  json_serializable: 6.9.0
-  build_runner: 2.4.15
+  freezed: 3.0.0-0.0.dev
+  json_serializable: 6.9.5
+  build_runner: 2.5.3
 
   # UI
-  widgetbook_generator: 3.12.0
-  mobx_codegen: 2.7.0
+  widgetbook_generator: 3.13.0
+  mobx_codegen: 2.7.1
 
 flutter:
   uses-material-design: true
