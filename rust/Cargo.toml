@@ -7,10 +7,10 @@ edition = "2021"
 crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
-flutter_rust_bridge = { version = "=2.9.0", features = ["chrono"] }
-url = "2.5.4"
-ipp = { version = "5.2.0", features = ["client"] }
-chrono = "0.4.41"
+flutter_rust_bridge = { version = "=2.11.1", features = ["chrono"] }
+url = "2.5.7"
+ipp = { version = "5.3.1", features = ["client"] }
+chrono = "0.4.42"
 
 [target.'cfg(target_os = "android")'.dependencies]
 openssl = { version = "*", features = ["vendored"] }
