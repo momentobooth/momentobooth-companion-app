@@ -27,7 +27,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         ref: ${{ github.event.pull_request.head.ref }}
 
@@ -110,7 +110,7 @@ jobs:
 
     - name: Commit changes to iOS build files and create PR
       id: cpr
-      uses: peter-evans/create-pull-request@v7
+      uses: peter-evans/create-pull-request@v8
       with:
         add-paths: ios
         commit-message: Update iOS build files
